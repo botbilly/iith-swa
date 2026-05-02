@@ -64,7 +64,7 @@ section {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 0 15px;   /* prevents edge sticking */
+    padding: 0 15px;
 }
 
 h2 {
@@ -110,6 +110,7 @@ h2 {
     display: block;
 }
 
+/* TABLE WRAPPER */
 .table-wrapper {
     width: 100%;
     max-width: 1100px;
@@ -117,10 +118,9 @@ h2 {
     overflow-x: auto;
 }
 
+/* TABLE */
 .styled-table {
     width: 100%;
-    min-width: 500px;   /* ensures proper structure */
-    margin: 0 auto;             /* center the table */
     border-collapse: separate;
     border-spacing: 0;
     background: #f8f9fa;
@@ -141,8 +141,7 @@ h2 {
 }
 
 .styled-table td {
-    padding: 12px 18px;         /* tighter spacing */
-    white-space: nowrap;        /* prevents stretching */
+    padding: 12px 18px;
     font-size: 16px;
     color: #333;
 }
@@ -161,8 +160,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* ===================================== */
-
 /* FOOTER */
 footer {
     background: #1f2d3d;
@@ -179,33 +176,71 @@ footer h3 { color: black; }
     padding: 10px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .styled-table th,
-    .styled-table td {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
-/* GRID FOR SIDE-BY-SIDE TABLES */
+/* GRID FOR SIDE-BY-SIDE TABLES (DESKTOP) */
 .tables-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;   /* two equal columns */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     max-width: 1100px;
     margin: auto;
 }
 
-/* OPTIONAL CARD LOOK */
+/* TABLE CARD */
 .table-card {
     background: #f8f9fa;
     padding: 15px;
     border-radius: 10px;
 }
-html, body {
-    overflow-x: hidden;
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* STACK TABLES */
+    .tables-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .table-card {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .styled-table {
+        width: 100%;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 10px;
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 200px;
+        padding: 20px;
+    }
 }
-}
+
 </style>
 
 
