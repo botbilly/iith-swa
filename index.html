@@ -83,18 +83,20 @@ h2 {
     margin-top: 15px;
 }
 
-.action-btn {
+..action-btn {
     padding: 12px 18px;
     background: #1f2d3d;
     color: white;
     text-decoration: none;
     display: inline-block;
     border-radius: 4px;
+}
 
-    /* NEW */
-    flex: 1 1 auto;         /* allows flexible width */
-    min-width: 180px;       /* keeps buttons uniform */
-    text-align: center;
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;          /* 🔥 this adds BOTH horizontal + vertical spacing */
+    margin-top: 15px;
 }
 
 /* NOTICES */
