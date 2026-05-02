@@ -16,6 +16,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     scroll-behavior: smooth;
+    background: #f5f7fa;
 }
 
 /* HEADER */
@@ -23,12 +24,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #2c3e50;
-    padding: 15px 20px;
+    background: #1f2d3d;
+    padding: 12px 30px;
+    border-bottom: 3px solid #c0392b;
     z-index: 1000;
 }
 
-/* NAV LAYOUT FIX */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -48,14 +49,16 @@ header {
 
 .nav-left a:hover,
 .nav-right a:hover {
-    color: #1abc9c;
+    color: #dcdcdc;
 }
 
 /* HERO */
 .hero {
-    height: 100vh;
-    background: linear-gradient(to right, #3498db, #1abc9c);
-    color: white;
+    margin-top: 60px;
+    height: 60vh;
+    background: #eaeff5;
+    color: #2c3e50;
+    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,22 +68,38 @@ header {
 }
 
 .hero h2 {
-    font-size: 36px;
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* SECTIONS */
 section {
-    padding: 80px 40px;
+    padding: 60px 20px;
     width: 100%;
+    border-bottom: 1px solid #ddd;
+    background: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADINGS */
+h2 {
+    border-left: 4px solid #c0392b;
+    padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 /* ABOUT */
 #about {
-    background: #f4f4f4;
+    background: #f4f6f8;
 }
 
 /* CARDS */
@@ -94,8 +113,7 @@ section {
     flex: 1 1 250px;
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
 }
 
 /* NOTICES */
@@ -105,10 +123,11 @@ section {
 }
 
 #notices li {
-    background: #ecf0f1;
+    background: #f8f9fa;
     margin: 10px 0;
     padding: 12px;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid #2c3e50;
+    font-size: 15px;
 }
 
 /* CONTACT */
@@ -116,10 +135,11 @@ form input, form textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ccc;
 }
 
 button {
-    background: #2c3e50;
+    background: #1f2d3d;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -127,26 +147,27 @@ button {
 }
 
 button:hover {
-    background: #1abc9c;
+    background: #c0392b;
 }
 
 /* FOOTER */
 footer {
-    background: #2c3e50;
-    color: #ccc;
+    background: #1f2d3d;
+    color: #bbb;
     padding: 20px;
-    font-size: 14px;
+    font-size: 13px;
+    border-top: 2px solid #c0392b;
 }
 
-/* COMMITTEE */
 .committee {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
 .committee h3 {
     margin-bottom: 10px;
     font-weight: normal;
+    color: #fff;
 }
 
 .committee p {
@@ -156,7 +177,7 @@ footer {
 /* MOBILE */
 @media (max-width: 600px) {
     .hero h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 
@@ -167,70 +188,72 @@ footer {
 
 <header>
     <div class="nav-container">
-        
-        <!-- LEFT -->
         <div class="nav-left">
             <a href="#home">Home</a>
         </div>
 
-        <!-- RIGHT -->
         <div class="nav-right">
             <a href="#about">About</a>
             <a href="#notices">Notices</a>
             <a href="#contact">Contact</a>
         </div>
-
     </div>
 </header>
 
 <!-- HOME -->
 <section id="home" class="hero">
     <h2>IITH Staff Welfare Association</h2>
-    <p>Working together for community support and growth</p>
+    <p>Committed to community welfare and institutional support</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2>About Us</h2>
-    <p>The Welfare Association focuses on community welfare, coordination, and member support.</p>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>The Association is dedicated to promoting the welfare of staff members through coordinated efforts, transparency, and mutual cooperation.</p>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Mission</h3>
-            <p>Support all members fairly.</p>
-        </div>
+        <div class="cards">
+            <div class="card">
+                <h3>Mission</h3>
+                <p>To ensure fair support and assistance to all members.</p>
+            </div>
 
-        <div class="card">
-            <h3>Vision</h3>
-            <p>Build a strong community.</p>
-        </div>
+            <div class="card">
+                <h3>Vision</h3>
+                <p>To foster a strong and collaborative community.</p>
+            </div>
 
-        <div class="card">
-            <h3>Values</h3>
-            <p>Trust and transparency.</p>
+            <div class="card">
+                <h3>Values</h3>
+                <p>Integrity, transparency, and collective growth.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- NOTICES -->
 <section id="notices">
-    <h2>Notices</h2>
-    <ul>
-        <li>📌 Meeting on Sunday at 10 AM</li>
-        <li>📌 Maintenance work next week</li>
-        <li>📌 Registrations open</li>
-    </ul>
+    <div class="container">
+        <h2>Notices</h2>
+        <ul>
+            <li>General body meeting scheduled on Sunday at 10:00 AM.</li>
+            <li>Routine maintenance activities planned for the upcoming week.</li>
+            <li>Membership registration process is currently open.</li>
+        </ul>
+    </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
-    <form onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="4" placeholder="Message"></textarea>
-        <button type="submit">Send</button>
-    </form>
+    <div class="container">
+        <h2>Contact</h2>
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="4" placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </section>
 
 <!-- FOOTER -->
@@ -248,7 +271,7 @@ footer {
 <script>
 function handleSubmit(e) {
     e.preventDefault();
-    alert("Message submitted (demo only)");
+    alert("Submission received (demo only)");
 }
 </script>
 
