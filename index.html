@@ -175,6 +175,46 @@ footer h3 {
     color: #666;
     background: #f5f7fa;
 }
+.workflow-list {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    padding: 12px 18px;
+    background: #1f2d3d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.action-btn:hover {
+    background: #c0392b;
+}
+.notice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-list li {
+    padding: 12px;
+    border-left: 4px solid #c0392b;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.notice-list .date {
+    font-weight: bold;
+    display: block;
+    color: #1f2d3d;
+}
 }
 
 </style>
@@ -209,18 +249,56 @@ footer h3 {
     </div>
 </section>
 
-<!-- NOTICES -->
-<section id="notices">
+<section id="workflow">
     <div class="container">
-        <h2>Notices</h2>
-        <ul>
-            <li>General meeting on Sunday at 10 AM</li>
-            <li>Maintenance scheduled next week</li>
-            <li>Registrations are open</li>
-        </ul>
+        <h2>Work Procedure</h2>
+
+        <ol class="workflow-list">
+            <li>Member submits request/representation.</li>
+            <li>Committee reviews the request.</li>
+            <li>Discussion held in scheduled meeting.</li>
+            <li>Decision is recorded and communicated.</li>
+            <li>Necessary action is taken and documented.</li>
+        </ol>
     </div>
 </section>
 
+<!-- NOTICES -->
+<ul class="notice-list">
+    <li>
+        <span class="date">01 Jan 2026</span>
+        General body meeting scheduled at 10:00 AM.
+    </li>
+    <li>
+        <span class="date">28 Dec 2025</span>
+        Maintenance work planned for upcoming week.
+    </li>
+    <li>
+        <span class="date">20 Dec 2025</span>
+        Membership registrations are open.
+    </li>
+</ul>
+
+<section>
+    <div class="container">
+
+        <h2>Resources</h2>
+
+        <div class="btn-group">
+
+            <a href="#" class="action-btn">
+                View Members List (as on 01 Jan 2026)
+            </a>
+
+            <a href="#" class="action-btn">
+                View Representations Received
+            </a>
+
+        </div>
+
+    </div>
+</section>
+    
 <!-- CONTACT -->
 <section id="contact">
     <div class="container">
@@ -327,6 +405,9 @@ Society Address: 2nd Floor, Admin Block, IIT Hyderabad, Kandi, Sangareddy, Telan
     </div>
 
 </footer>
+    <p style="font-size: 12px; color: gray;">
+    Last updated: 01 Jan 2026
+</p>
 <div class="copyright">
     © 2026 IITH Staff Welfare Association
 </div>
