@@ -182,7 +182,26 @@ footer h3 { color: white; }
 @media (max-width: 600px) {
     .hero { height: 40vh; }
 }
+/* GRID FOR SIDE-BY-SIDE TABLES */
+.tables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* two equal columns */
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
 
+/* OPTIONAL CARD LOOK */
+.table-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+}
+    @media (max-width: 768px) {
+    .tables-grid {
+        grid-template-columns: 1fr;   /* stack */
+    }
+}
 </style>
 
 
