@@ -47,41 +47,27 @@ header {
     margin-left: 20px;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
-    color: #dcdcdc;
-}
-
 /* HERO */
 .hero {
     margin-top: 60px;
     height: 60vh;
     background: #eaeff5;
-    color: #2c3e50;
-    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    padding: 20px;
 }
 
 .hero h2 {
-    font-size: 34px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 16px;
+    margin: 0;
 }
 
 /* SECTIONS */
 section {
     padding: 60px 20px;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
     background: white;
+    border-bottom: 1px solid #ddd;
 }
 
 /* CONTAINER */
@@ -94,96 +80,20 @@ section {
 h2 {
     border-left: 4px solid #c0392b;
     padding-left: 10px;
-    margin-bottom: 20px;
 }
 
-/* ABOUT */
-#about {
-    background: #f4f6f8;
+/* TABLE FULL WIDTH BREAKOUT */
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 0 40px;
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1 1 250px;
-    background: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-}
-
-/* NOTICES */
-#notices ul {
-    list-style: none;
-    padding: 0;
-}
-
-#notices li {
-    background: #f8f9fa;
-    margin: 10px 0;
-    padding: 12px;
-    border-left: 4px solid #2c3e50;
-    font-size: 15px;
-}
-
-/* CONTACT */
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-}
-
-button {
-    background: #1f2d3d;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #c0392b;
-}
-
-/* FOOTER */
-footer {
-    background: #1f2d3d;
-    color: #bbb;
-    padding: 20px;
-    font-size: 13px;
-    border-top: 2px solid #c0392b;
-}
-
-.committee {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.committee h3 {
-    margin-bottom: 10px;
-    font-weight: normal;
-    color: #fff;
-}
-
-.committee p {
-    margin: 4px 0;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .hero h2 {
-        font-size: 24px;
-    }
-
+/* TABLE STYLE */
 .table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .styled-table {
@@ -195,7 +105,6 @@ footer {
     overflow: hidden;
 }
 
-/* HEADER */
 .styled-table thead {
     background: #dcdfe3;
 }
@@ -203,42 +112,39 @@ footer {
 .styled-table th {
     text-align: left;
     padding: 14px;
-    font-weight: 600;
-    color: #333;
 }
 
-/* BODY */
 .styled-table td {
     padding: 14px;
     border-top: 1px solid #ccc;
-    color: #333;
 }
 
-/* ROW HOVER (subtle) */
 .styled-table tbody tr:hover {
     background: #e6e9ed;
 }
 
-/* LINKS */
 .styled-table a {
     color: #2563eb;
     text-decoration: none;
 }
 
-.styled-table a:hover {
-    text-decoration: underline;
+/* FOOTER */
+footer {
+    background: #1f2d3d;
+    color: #bbb;
+    padding: 30px 0;
+    border-top: 2px solid #c0392b;
 }
 
-.full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding: 0 40px;
+footer h3 {
+    color: white;
 }
-    
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero {
+        height: 40vh;
+    }
 }
 
 </style>
@@ -251,7 +157,6 @@ footer {
         <div class="nav-left">
             <a href="#home">Home</a>
         </div>
-
         <div class="nav-right">
             <a href="#about">About</a>
             <a href="#notices">Notices</a>
@@ -263,31 +168,14 @@ footer {
 <!-- HOME -->
 <section id="home" class="hero">
     <h2>IITH Staff Welfare Association</h2>
-    <p>Regd No: 485 of 2025</p>
+    <p>Committed to community welfare and support</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
     <div class="container">
         <h2>About Us</h2>
-        <p>The Association is dedicated to promoting the welfare of staff members through coordinated efforts, transparency, and mutual cooperation.</p>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Mission</h3>
-                <p>To ensure fair support and assistance to all members.</p>
-            </div>
-
-            <div class="card">
-                <h3>Vision</h3>
-                <p>To foster a strong and collaborative community.</p>
-            </div>
-
-            <div class="card">
-                <h3>Values</h3>
-                <p>Integrity, transparency, and collective growth.</p>
-            </div>
-        </div>
+        <p>This association focuses on staff welfare, coordination, and transparency.</p>
     </div>
 </section>
 
@@ -296,9 +184,9 @@ footer {
     <div class="container">
         <h2>Notices</h2>
         <ul>
-            <li>General body meeting scheduled on Sunday at 10:00 AM.</li>
-            <li>Routine maintenance activities planned for the upcoming week.</li>
-            <li>Membership registration process is currently open.</li>
+            <li>General meeting on Sunday at 10 AM</li>
+            <li>Maintenance scheduled next week</li>
+            <li>Registrations are open</li>
         </ul>
     </div>
 </section>
@@ -307,93 +195,16 @@ footer {
 <section id="contact">
     <div class="container">
         <h2>Contact</h2>
-        <form onsubmit="handleSubmit(event)">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="4" placeholder="Message"></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <p>Email: contact@example.com</p>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER WITH FULL WIDTH TABLES -->
 <footer>
-    <div class="committee">
-        <h3>Society Registraion No: 485 of 2025 (Maintained Under Section 3 of Telangana Societies Registration Act, 2001)</h3>
-        <h3>Society Address: 2nd Floor, Admin Block, IIT Hyderabad, Kandi, Sangareddy, Telangana, India</h3>
-        <h3>Executive Committee (Current):</h3>
-        <p>President: <a href="mailto:v.raju@admin.iith.ac.in">Mr. G S L Vanam Raju</a></p>
-        <p>Vice President: <a href="mailto:maria.morris@admin.iith.ac.in">Ms. Maria Morris</a></p>
-        <p>General Secretary: <a href="mailto:shiva.nyalam@admin.iith.ac.in">Mr. N Shiva Kumar</a></p>
-        <p>Joint Secretary: <a href="mailto:aneesh.v@admin.iith.ac.in">Mr. Vanam Aneesh</a></p>
-        <p>Treasurer: <a href="mailto:saiteja.c@admin.iith.ac.in">Mr. Sai Teja Chandrika</a></p>
-        <p>Executive Committee Members (Current): <br>
-            1. <a href="mailto:ajith.ak@admin.iith.ac.in">Mr. Ajith Kanakambaram</a><br>
-            2. <a href="mailto:vamsi.krishna@admin.iith.ac.in">Mr. G Vamsi Krishna</a><br>
-            3. <a href="mailto:purva.kherkar@admin.iith.ac.in">Mr. Purva Kherkar</a><br>
-            4. <a href="mailto:rama.kesava@admin.iith.ac.in">Mr. M Ramakesava/a><br>
-            5. <a href="mailto:sankar.reddy@admin.iith.ac.in">Mr. A Sankar Reddy</a><br>
-            6. <a href="mailto:vasantha.reddy@admin.iith.ac.in">Ms. G Vasantha Kumari</a><br>
-            7. <a href="mailto:brahmachary.vadla@admin.iith.ac.in">Mr. V Brahmachary</a><br>
-            8. <a href="mailto:harshavardan.b@admin.iith.ac.in">Mr. B Harshavardan Reddy</a></p>
+
+    <div class="container">
+        <h3>Executive Committee</h3>
     </div>
-    <div class="committee full-width-table">
-
-    <h3>Executive Committee</h3>
-    <table>
-        <tr>
-            <th>Designation</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>President</td>
-            <td>X</td>
-            <td><a href="mailto:x@example.com">x@example.com</a></td>
-        </tr>
-        <tr>
-            <td>Vice President</td>
-            <td>Y</td>
-            <td><a href="mailto:y@example.com">y@example.com</a></td>
-        </tr>
-        <tr>
-            <td>Secretary</td>
-            <td>Z</td>
-            <td><a href="mailto:z@example.com">z@example.com</a></td>
-        </tr>
-        <tr>
-            <td>Treasurer</td>
-            <td>A</td>
-            <td><a href="mailto:a@example.com">a@example.com</a></td>
-        </tr>
-    </table>
-
-    <br>
-
-    <h3>Executive Committee Members</h3>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>B</td>
-            <td>b@example.com</a></td>
-        </tr>
-        <tr>
-            <td>C</td>
-            <td>c@example.com</a></td>
-        </tr>
-        <tr>
-            <td>D</td>
-            <td>d@example.com</a></td>
-        </tr>
-    </table>
-
-</div>
-<div class="committee">
-
-    <h3>Executive Committee</h3>
 
     <div class="table-wrapper full-width">
         <table class="styled-table">
@@ -419,15 +230,32 @@ footer {
         </table>
     </div>
 
-</div>
-</footer>
+    <div class="container">
+        <h3>Executive Committee Members</h3>
+    </div>
 
-<script>
-function handleSubmit(e) {
-    e.preventDefault();
-    alert("Submission received (demo only)");
-}
-</script>
+    <div class="table-wrapper full-width">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B</td>
+                    <td><a href="mailto:b@example.com">Email</a></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td><a href="mailto:c@example.com">Email</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</footer>
 
 </body>
 </html>
