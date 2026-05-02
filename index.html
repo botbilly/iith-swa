@@ -179,6 +179,56 @@ footer {
     .hero h2 {
         font-size: 24px;
     }
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #f1f3f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* HEADER */
+.styled-table thead {
+    background: #dcdfe3;
+}
+
+.styled-table th {
+    text-align: left;
+    padding: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* BODY */
+.styled-table td {
+    padding: 14px;
+    border-top: 1px solid #ccc;
+    color: #333;
+}
+
+/* ROW HOVER (subtle) */
+.styled-table tbody tr:hover {
+    background: #e6e9ed;
+}
+
+/* LINKS */
+.styled-table a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.styled-table a:hover {
+    text-decoration: underline;
+}
+    
 }
 
 </style>
@@ -329,6 +379,35 @@ footer {
             <td>d@example.com</a></td>
         </tr>
     </table>
+
+</div>
+<div class="committee">
+
+    <h3>Executive Committee</h3>
+
+    <div class="table-wrapper">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Official Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>President</td>
+                    <td>X</td>
+                    <td><a href="mailto:x@example.com">Email</a></td>
+                </tr>
+                <tr>
+                    <td>Vice President</td>
+                    <td>Y</td>
+                    <td><a href="mailto:y@example.com">Email</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
 </footer>
