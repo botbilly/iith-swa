@@ -88,8 +88,13 @@ h2 {
     background: #1f2d3d;
     color: white;
     text-decoration: none;
-    margin-right: 10px;
     display: inline-block;
+    border-radius: 4px;
+
+    /* NEW */
+    flex: 1 1 auto;         /* allows flexible width */
+    min-width: 180px;       /* keeps buttons uniform */
+    text-align: center;
 }
 
 /* NOTICES */
@@ -193,8 +198,7 @@ footer h3 { color: black; }
 }
 
 /* ================= MOBILE CSS ================= */
-@media (max-width: 768px) {
-
+@media (max-width: 768px) {    
     body {
         overflow-x: hidden;
     }
@@ -202,7 +206,9 @@ footer h3 { color: black; }
     section {
         padding: 40px 15px;
     }
-
+    .action-btn {
+        flex: 1 1 100%;   /* one button per row */
+    }
     .container {
         padding: 0 12px;
     }
