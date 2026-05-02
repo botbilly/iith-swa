@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welfare Association</title>
+<title>IITH Staff Welfare Association</title>
 
 <style>
 
@@ -28,19 +28,26 @@ header {
     z-index: 1000;
 }
 
-nav {
+/* NAV LAYOUT FIX */
+.nav-container {
     display: flex;
-    justify-content: flex-start; /* LEFT SIDE */
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a {
+.nav-left a,
+.nav-right a {
     color: white;
-    margin-right: 20px;
     text-decoration: none;
     font-weight: 500;
 }
 
-nav a:hover {
+.nav-right a {
+    margin-left: 20px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
     color: #1abc9c;
 }
 
@@ -155,22 +162,31 @@ footer {
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#notices">Notices</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-container">
+        
+        <!-- LEFT -->
+        <div class="nav-left">
+            <a href="#home">Home</a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <a href="#about">About</a>
+            <a href="#notices">Notices</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
 </header>
 
 <!-- HOME -->
-<section class="hero">
-    <h2>Welfare Association</h2>
+<section id="home" class="hero">
+    <h2>IITH Staff Welfare Association</h2>
     <p>Working together for community support and growth</p>
 </section>
 
