@@ -242,17 +242,24 @@ footer h3 { color: black; }
         white-space: normal;
     }
 
-    .hero {
-        height: auto;
-        min-height: 200px;
-        padding: 20px;
-    }
-.hero .logo {
-  width: 80px !important;
-  height: 80px !important;
-  object-fit: contain !important;
-  display: block;
-  margin: 0 auto 15px;
+    /* Reset anything touching images */
+img {
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+/* Kill layout stretching */
+.hero {
+  display: block !important;
+  text-align: center;
+}
+
+/* Absolute control */
+.logo {
+  display: inline-block;
+  width: 80px;
+  height: auto;
 }
     
 }
@@ -277,7 +284,6 @@ footer h3 { color: black; }
 
 <section id="home" class="hero">
   <img src="logo.png" alt="IITH SWA Logo" class="logo">
-
   <h1>IITH Staff Welfare Association</h1>
   <p>Committed to community welfare and support</p>
 </section>
