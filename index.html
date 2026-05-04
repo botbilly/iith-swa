@@ -5,66 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IITH Staff Welfare Association</title>
 
+<!-- React CDN -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 <style>
 
-/* RESET */
-* { box-sizing: border-box; }
-
+/* GENERAL */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
     background: #f5f7fa;
 }
 
 /* HEADER */
 header {
     position: fixed;
-    top: 0;
     width: 100%;
     background: #1f2d3d;
-    padding: 12px 30px;
-    border-bottom: 3px solid #c0392b;
-    z-index: 1000;
+    color: white;
+    padding: 12px 20px;
 }
 
-.nav-container {
+.nav {
     display: flex;
     justify-content: space-between;
 }
 
-.nav-left a,
-.nav-right a {
+.nav a {
     color: white;
+    margin-left: 15px;
     text-decoration: none;
-    margin-left: 20px;
 }
 
 /* HERO */
 .hero {
     margin-top: 60px;
-    height: 45vh;
-    min-height: 280px;
+    height: 40vh;
     background: #eaeff5;
-    border-bottom: 2px solid #c0392b;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
 }
 
 /* SECTIONS */
 section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background: white;
     border-bottom: 1px solid #ddd;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 15px;
 }
 
 h2 {
@@ -72,314 +62,190 @@ h2 {
     padding-left: 10px;
 }
 
-/* WORKFLOW */
-.workflow-list {
-    padding-left: 20px;
-    line-height: 1.8;
+/* NOTICE */
+.notice {
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 /* BUTTONS */
 .btn-group {
-    margin-top: 15px;
-}
-
-.action-btn {
-    padding: 12px 18px;
-    background: #1f2d3d;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-}
-
-.btn-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;          /* 🔥 this adds BOTH horizontal + vertical spacing */
-    margin-top: 15px;
+    gap: 10px;
 }
 
-/* NOTICES */
-.notice-list {
-    list-style: none;
-    padding: 0;
-}
-
-.notice-list li {
-    padding: 12px;
-    border-left: 4px solid #c0392b;
-    background: #f8f9fa;
-    margin-bottom: 10px;
-}
-
-.notice-list .date {
-    font-weight: bold;
-    display: block;
-}
-
-/* TABLE WRAPPER */
-.table-wrapper {
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
-    overflow-x: auto;
+.btn {
+    padding: 10px 15px;
+    background: #1f2d3d;
+    color: white;
+    border: none;
 }
 
 /* TABLE */
-.styled-table {
+.tables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     background: #f8f9fa;
-    border-radius: 12px;
-    overflow: hidden;
 }
 
-.styled-table thead {
-    background: #e2e5e9;
-}
-
-.styled-table th {
-    padding: 16px;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2c2c2c;
-}
-
-.styled-table td {
-    padding: 12px 18px;
-    font-size: 16px;
-    color: #333;
-}
-
-.styled-table tbody tr {
-    border-top: 1px solid #ddd;
-}
-
-.styled-table a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.styled-table a:hover {
-    text-decoration: underline;
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 /* FOOTER */
 footer {
     background: #1f2d3d;
-    color: #bbb;
-    padding: 30px 0;
-}
-
-footer h3 { color: black; }
-
-/* COPYRIGHT */
-.copyright {
+    color: white;
     text-align: center;
-    font-size: 12px;
     padding: 10px;
 }
 
-/* GRID FOR SIDE-BY-SIDE TABLES (DESKTOP) */
-.tables-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* TABLE CARD */
-.table-card {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* ================= MOBILE CSS ================= */
-@media (max-width: 768px) {    
-    body {
-        overflow-x: hidden;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-    .action-btn {
-        flex: 1 1 100%;   /* one button per row */
-    }
-    .container {
-        padding: 0 12px;
-    }
-
-    /* STACK TABLES */
-    .tables-grid {
+/* MOBILE */
+@media (max-width: 768px) {
+    .tables {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .table-card {
-        width: 100%;
-        padding: 12px;
-    }
-
-    .table-wrapper {
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    .styled-table {
-        width: 100%;
-    }
-
-    .styled-table th,
-    .styled-table td {
-        padding: 10px;
-        font-size: 14px;
-        white-space: normal;
-    }
-
-    .hero {
-        height: auto;
-        min-height: 200px;
-        padding: 20px;
     }
 }
 
 </style>
-
-
 </head>
 
 <body>
 
-<header>
-<div class="nav-container">
-    <div class="nav-left"><a href="#home">Home</a></div>
-    <div class="nav-right">
-        <a href="#notices">Notices</a>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Contact</a>
-    </div>
-</div>
-</header>
+<div id="root"></div>
 
-<section id="home" class="hero">
-<h1>IITH Staff Welfare Association</h1>
-<p>Committed to community welfare and support</p>
-</section>
+<script type="text/babel">
 
-<section id="about">
-<div class="container">
-<h2>About</h2>
-<p>This association focuses on IIT Hyderabad staff welfare and coordination.</p>
-</div>
-</section>
+function App() {
+    return (
+        <div>
 
-<section id="workflow">
-<div class="container">
-<h2>Work Procedure</h2>
-<ol class="workflow-list">
-<li>Member submits request</li>
-<li>Committee reviews</li>
-<li>Discussion held</li>
-<li>Decision recorded</li>
-<li>Action taken</li>
-</ol>
-</div>
-</section>
+            {/* HEADER */}
+            <header>
+                <div className="nav">
+                    <div>Home</div>
+                    <div>
+                        <a href="#about">About</a>
+                        <a href="#workflow">Workflow</a>
+                        <a href="#notices">Notices</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </header>
 
-<section id="notices">
-<div class="container">
-<h2>Notices</h2>
-<ul class="notice-list">
-<li><span class="date">04 May 2026</span>General Body Meeting at 10 AM</li>
-<li><span class="date">12 June 2025</span>Registrations open</li>
-<li><span class="date">00 Jan 20XX</span>Cultural Activities</li>
-</ul>
-</div>
-</section>
+            {/* HERO */}
+            <section className="hero">
+                <h1>IITH Staff Welfare Association</h1>
+                <p>Committed to community welfare and transparency</p>
+            </section>
 
-<section id="resources">
-<div class="container">
-<h2>Resources</h2>
-<div class="btn-group">
-<a href="#" class="action-btn">Members List</a>
-<a href="#" class="action-btn">Representations Received</a>
-<a href="#" class="action-btn">Executive Committee Meetings</a>
-<a href="#" class="action-btn">General Body Meetings</a>
-<a href="#" class="action-btn">Audit Reports</a>
-<a href="#" class="action-btn">Miscellaneous</a>
-</div>
-</div>
-</section>
+            {/* ABOUT */}
+            <section id="about">
+                <h2>About</h2>
+                <p>Association focused on staff welfare and coordination.</p>
+            </section>
 
-<section id="contact">
-<div class="container">
-<h2>Contact</h2>
-<p>Email ID: staff.association@iith.ac.in<br>
-Mobile No: +91 XXXXX XXXXX</p>
-</div>
-</section>
+            {/* WORKFLOW */}
+            <section id="workflow">
+                <h2>Work Procedure</h2>
+                <ol>
+                    <li>Submit request</li>
+                    <li>Review</li>
+                    <li>Discussion</li>
+                    <li>Decision</li>
+                    <li>Action</li>
+                </ol>
+            </section>
 
-<footer>
+            {/* NOTICES */}
+            <section id="notices">
+                <h2>Notices</h2>
+                <div className="notice">
+                    <strong>01 Jan 2026</strong>
+                    <p>Meeting at 10 AM</p>
+                </div>
+                <div className="notice">
+                    <strong>28 Dec 2025</strong>
+                    <p>Maintenance work</p>
+                </div>
+            </section>
 
-<div class="container">
-<p style="line-height:1.6;">
-Name of the Society: IITH STAFF WELFARE ASSOCIATION<br>
-Society Registration No: 485 of 2025, Dt: 12/June/2025<br>
-(Maintained under section 3 of Telangana Societies Registration Act, 2001)<br>
-Society Category: Welfare Association<br>
-Society Address: 2nd Floor, Admin Block, IIT Hyderabad, Kandi, Sangareddy, Telangana, India<br>
-</p>
-</div>
+            {/* RESOURCES */}
+            <section>
+                <h2>Resources</h2>
+                <div className="btn-group">
+                    <button className="btn">Members List</button>
+                    <button className="btn">Representations</button>
+                    <button className="btn">Audit Reports</button>
+                    <button className="btn">Meetings</button>
+                </div>
+            </section>
 
+            {/* TABLES */}
+            <section className="tables">
+                <div>
+                    <h3>Executive Committee</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>President</td>
+                                <td>Vanama Raju</td>
+                                <td>Email</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                <div>
+                    <h3>Members</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ajith</td>
+                                <td>Email</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-<div class="tables-grid">
-    <div class="table-card">
-        <h3>Executive Committee (Current):</h3>
-        <div class="table-wrapper">
-            <table class="styled-table">
-                <tr><th>Position</th><th>Name</th><th>Email</th></tr>
-                    <tr><td>President</td><td>Mr. G S L Vanama Raju</td><td><a href="mailto:v.raju@admin.iith.ac.in">Email</a></td></tr>
-                    <tr><td>Vice President</td><td>Ms. Maria Morris</td><td><a href="mailto:maria.morris@admin.iith.ac.in">Email</a></td></tr>
-                    <tr><td>General Secretary</td><td>Mr. N Shiva Kumar</td><td><a href="mailto:shiva.nyalam@admin.iith.ac.in">Email</a></td></tr>
-                    <tr><td>Joint Secretary</td><td>Mr. Vanam Aneesh</td><td><a href="mailto:aneesh.v@admin.iith.ac.in">Email</a></td></tr>
-                    <tr><td>Treasurer</td><td>Mr. Sai Teja Chandrika</td><td><a href="mailto:saiteja.c@admin.iith.ac.in">Email</a></td></tr>
-            </table>
+            {/* CONTACT */}
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>staff.association@iith.ac.in</p>
+            </section>
+
+            <footer>© 2026 IITH Welfare Association</footer>
+
         </div>
-    </div>
+    );
+}
 
-    <div class="table-card">
-        <h3>Executive Committee Members (Current):</h3>
-        <div class="table-wrapper">
-            <table class="styled-table">
-               <tr><td>Mr. Ajith Kanakambaram</td><td><a href="mailto:ajith.ak@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Mr. G Vamsi Krishna</td><td><a href="mailto:vamsi.krishna@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Ms. Purva Kherkar</td><td><a href="mailto:purva.kherkar@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Mr. M Ramakesava</td><td><a href="mailto:rama.kesava@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Mr. A Sankar Reddy</td><td><a href="mailto:sankar.reddy@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Ms. G Vasantha Kumari</td><td><a href="mailto:vasantha.reddy@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Mr. V Brahmachary</td><td><a href="mailto:brahmachary.vadla@admin.iith.ac.in">Email</a></td></tr>
-                <tr><td>Mr. B Harshavardan Reddy</td><td><a href="mailto:harshavardan.b@admin.iith.ac.in">Email</a></td></tr>
-            </table>
-        </div>
-    </div>
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
-</div>
-
-
-</footer>
-
-<p style="text-align:center;font-size:12px;">Last updated: 01 May 2026</p>
-
-<div class="copyright">
-© 2026 IITH Staff Welfare Association
-</div>
+</script>
 
 </body>
 </html>
