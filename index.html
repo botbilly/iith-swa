@@ -248,10 +248,15 @@ footer h3 { color: black; }
         padding: 20px;
     }
 
-    .hero .logo {
-  width: auto !important;
-  max-width: 100px !important;
+    .logo-container {
+  width: 100px;      /* control box */
+  margin: 0 auto 15px;
+}
+
+.logo {
+  width: 100%;
   height: auto;
+  display: block;
 }
     
 }
@@ -275,7 +280,9 @@ footer h3 { color: black; }
 </header>
 
 <section id="home" class="hero">
-  <img src="logo.png" alt="IITH SWA Logo" class="logo">
+  <div class="logo-container">
+    <img src="logo.png" alt="IITH SWA Logo" class="logo">
+  </div>
 
   <h1>IITH Staff Welfare Association</h1>
   <p>Committed to community welfare and support</p>
